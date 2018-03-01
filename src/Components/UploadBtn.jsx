@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Result from './Result.jsx'
 
 let findBtn = {
 
@@ -41,7 +41,11 @@ export default class NavBar extends React.Component{
                     <br/>
                     <button className="btn btn-danger" style={findBtn}>Find Me</button>
                 </div>
-                <div className="col-md-4"></div>
+                <div className="col-md-4">
+                    <Result/>
+
+
+                </div>
             </div>
         </div>
 
