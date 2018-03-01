@@ -34,7 +34,7 @@ export default class UploadBtn extends React.Component{
                     </label>
                     <div className="controls">
                         <div className="entry input-group col-xs-3">
-                            <input className="btn btn-primary" name="fields[]" type="file"/>
+                            <input className="btn btn-primary" name="fields[]" type="file" accept=".jpg, .jpeg, .png"/>
                                  <span className="input-group-btn">
                                     <button className="btn btn-success btn-add" type="button">
                                         <span className="glyphicon glyphicon-plus"></span>

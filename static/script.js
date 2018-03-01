@@ -20,4 +20,18 @@ $(function()
         e.preventDefault();
         return false;
     });
+
+    $(document).on('click', '.saveImages', function(e)
+    {
+        console.log('Saving Files in Background');
+        let files = $('input');
+        for (file of files)
+        {
+             console.log(file.files[0].name)
+        }
+
+    })
+
+
+
 });

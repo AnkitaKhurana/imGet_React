@@ -18469,7 +18469,7 @@ var UploadBtn = function (_React$Component) {
                             _react2.default.createElement(
                                 'div',
                                 { className: 'entry input-group col-xs-3' },
-                                _react2.default.createElement('input', { className: 'btn btn-primary', name: 'fields[]', type: 'file' }),
+                                _react2.default.createElement('input', { className: 'btn btn-primary', name: 'fields[]', type: 'file', accept: '.jpg, .jpeg, .png' }),
                                 _react2.default.createElement(
                                     'span',
                                     { className: 'input-group-btn' },
