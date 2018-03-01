@@ -8,7 +8,7 @@ export default class App extends React.Component{
 
    constructor(props) {
        super(props);
-       this.state = {username:'Guest'};
+       this.state = {username:'Guest',links:[],myimages:[]};
        this.setCurrent = this.setCurrent.bind(this);
         }
 
@@ -23,9 +23,6 @@ export default class App extends React.Component{
         return (<div>
             <NavBar/>
             <UploadBtn/>
-
-
-
         </div>);
     }
 }

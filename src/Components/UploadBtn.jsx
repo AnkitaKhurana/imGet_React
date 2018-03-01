@@ -1,5 +1,5 @@
 import React from 'react';
-import Result from './Result.jsx'
+import Result from './Result.jsx';
 
 let findBtn = {
 
@@ -8,8 +8,14 @@ let findBtn = {
 };
 
 
-export default class NavBar extends React.Component{
+export default class UploadBtn extends React.Component{
 
+    constructor(props)
+    {
+        super(props);
+        this.state=({links:[]});
+
+    }
 
     render()
     {
@@ -19,8 +25,8 @@ export default class NavBar extends React.Component{
             <div className="row">
 
                 <div className="col-md-4" style={{align:"center"}}>
-                    <h2> Upload your Images here <br/><br/>
-                    Click (+) to add more files</h2>
+                    <h2> Upload your Images here &#8658; <br/><br/>
+                    Click (+) to Add More Files</h2>
                 </div>
                 <div className="control-group col-md-4" id="fields">
                     <label className="control-label" htmlFor="field1">
@@ -34,17 +40,14 @@ export default class NavBar extends React.Component{
                                         <span className="glyphicon glyphicon-plus"></span>
                                     </button>
                                  </span>
-
                         </div>
 
                     </div>
                     <br/>
-                    <button className="btn btn-danger" style={findBtn}>Find Me</button>
+                    <button className="btn btn-danger saveImages" style={findBtn}>Find Me</button>
                 </div>
                 <div className="col-md-4">
-                    <Result/>
-
-
+                    <Result links={this.state.links} />
                 </div>
             </div>
         </div>

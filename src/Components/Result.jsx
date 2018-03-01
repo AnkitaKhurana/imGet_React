@@ -1,15 +1,15 @@
 import React from 'react';
-
+import Row from './Row.jsx'
 
 export default class NavBar extends React.Component{
-
 
     render()
     {
         return(
-
-        <table class="table">
-            <thead class="thead-dark">
+        <div>
+            <center><h2>Result</h2></center>
+        <table className="table">
+            <thead className="thead-dark">
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">File Link</th>
@@ -17,13 +17,17 @@ export default class NavBar extends React.Component{
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-            </tr>
+
+
+            {
+                this.props.links.map( function(l){
+                    return <Row data={l} key={l.id} />
+                })
+            }
+
             </tbody>
         </table>
+        </div>
 
         )
     }
