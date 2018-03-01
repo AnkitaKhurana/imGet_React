@@ -9,7 +9,7 @@ let navStyle = {
 
 let navTitleStyle = {
     fontSize: '25px',
-    align : 'centre'
+    marginLeft : '45%'
 };
 
 export default class NavBar extends React.Component{

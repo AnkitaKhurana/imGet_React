@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import NavBar from "./Components/NavBar.jsx"
+import NavBar from "./Components/NavBar.jsx";
+import UploadBtn from "./Components/UploadBtn.jsx"
 
 
 export default class App extends React.Component{
@@ -21,6 +22,7 @@ export default class App extends React.Component{
     {
         return (<div>
             <NavBar/>
+            <UploadBtn/>
 
 
 
