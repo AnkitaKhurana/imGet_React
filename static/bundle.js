@@ -18413,7 +18413,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var findBtn = {
 
-    align: 'center'
+    marginLeft: '33%'
 
 };
 
@@ -18435,7 +18435,18 @@ var NavBar = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'row' },
-                    _react2.default.createElement('div', { className: 'col-md-4' }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-md-4', style: { align: "center" } },
+                        _react2.default.createElement(
+                            'h2',
+                            null,
+                            ' Upload your Images here ',
+                            _react2.default.createElement('br', null),
+                            _react2.default.createElement('br', null),
+                            'Click (+) to add more files'
+                        )
+                    ),
                     _react2.default.createElement(
                         'div',
                         { className: 'control-group col-md-4', id: 'fields' },
