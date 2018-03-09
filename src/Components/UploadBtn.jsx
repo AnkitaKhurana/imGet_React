@@ -2,9 +2,7 @@ import React from 'react';
 import Result from './Result.jsx';
 
 let findBtn = {
-
     marginLeft: '33%'
-
 };
 
 
@@ -31,20 +29,19 @@ export default class UploadBtn extends React.Component{
                 <div className="control-group col-md-4" id="fields">
                     <label className="control-label" htmlFor="field1">
                         Upload Atleast 6 images for better Results :)
-                    </label>
+                        </label>
+                    <form id="frmUploader" method="post" encType="multipart/form-data" action="/api/Upload">
                     <div className="controls">
                         <div className="entry input-group col-xs-3">
-                            <input className="btn btn-primary" name="fields[]" type="file" accept=".jpg, .jpeg, .png"/>
-                                 <span className="input-group-btn">
-                                    <button className="btn btn-success btn-add" type="button">
-                                        <span className="glyphicon glyphicon-plus"></span>
-                                    </button>
-                                 </span>
-                        </div>
 
+                                <input className="btn btn-primary" name="imgUploader" type="file" accept=".jpg, .jpeg, .png" multiple/>
+
+                        </div>
                     </div>
+                        <button type="submit" className="btn btn-danger saveImages" style={findBtn}>Find Me</button>
+                    </form>
+
                     <br/>
-                    <button className="btn btn-danger saveImages" style={findBtn}>Find Me</button>
                 </div>
                 <div className="col-md-4">
                     <Result links={this.state.links} />

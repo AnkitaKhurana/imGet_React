@@ -18416,9 +18416,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var findBtn = {
-
     marginLeft: '33%'
-
 };
 
 var UploadBtn = function (_React$Component) {
@@ -18464,29 +18462,24 @@ var UploadBtn = function (_React$Component) {
                             'Upload Atleast 6 images for better Results :)'
                         ),
                         _react2.default.createElement(
-                            'div',
-                            { className: 'controls' },
+                            'form',
+                            { id: 'frmUploader', method: 'post', encType: 'multipart/form-data', action: '/api/Upload' },
                             _react2.default.createElement(
                                 'div',
-                                { className: 'entry input-group col-xs-3' },
-                                _react2.default.createElement('input', { className: 'btn btn-primary', name: 'fields[]', type: 'file', accept: '.jpg, .jpeg, .png' }),
+                                { className: 'controls' },
                                 _react2.default.createElement(
-                                    'span',
-                                    { className: 'input-group-btn' },
-                                    _react2.default.createElement(
-                                        'button',
-                                        { className: 'btn btn-success btn-add', type: 'button' },
-                                        _react2.default.createElement('span', { className: 'glyphicon glyphicon-plus' })
-                                    )
+                                    'div',
+                                    { className: 'entry input-group col-xs-3' },
+                                    _react2.default.createElement('input', { className: 'btn btn-primary', name: 'imgUploader', type: 'file', accept: '.jpg, .jpeg, .png', multiple: true })
                                 )
+                            ),
+                            _react2.default.createElement(
+                                'button',
+                                { type: 'submit', className: 'btn btn-danger saveImages', style: findBtn },
+                                'Find Me'
                             )
                         ),
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement(
-                            'button',
-                            { className: 'btn btn-danger saveImages', style: findBtn },
-                            'Find Me'
-                        )
+                        _react2.default.createElement('br', null)
                     ),
                     _react2.default.createElement(
                         'div',
