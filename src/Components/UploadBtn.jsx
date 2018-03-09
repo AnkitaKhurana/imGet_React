@@ -1,5 +1,6 @@
 import React from 'react';
 import Result from './Result.jsx';
+import axios from "axios";
 
 let findBtn = {
     marginLeft: '33%'
