@@ -18437,14 +18437,16 @@ var UploadBtn = function (_React$Component) {
     }
 
     _createClass(UploadBtn, [{
-        key: 'componentsDidMount',
-        value: function componentsDidMount() {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            console.log('I was triggered during componentDidMount');
+
             var url = "http://localhost:3010/result";
             _axios2.default.get(url).then(function (response) {
-                console.log(response);
                 var l = response.data;
                 this.setState({ links: l });
-            }.bind(this)).error(function (err) {
+                console.log(this.state.links);
+            }.bind(this)).catch(function (err) {
                 console.log(err);
             });
         }
@@ -18583,19 +18585,14 @@ var NavBar = function (_React$Component) {
                                 'th',
                                 { scope: 'col' },
                                 'File Link'
-                            ),
-                            _react2.default.createElement(
-                                'th',
-                                { scope: 'col' },
-                                'Match %'
                             )
                         )
                     ),
                     _react2.default.createElement(
                         'tbody',
                         null,
-                        this.props.links.map(function (l) {
-                            return _react2.default.createElement(_Row2.default, { data: l, key: l.id });
+                        this.props.links.map(function (l, index) {
+                            return _react2.default.createElement(_Row2.default, { data: l, key: l, num: index });
                         })
                     )
                 )
@@ -18633,16 +18630,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var loginbox = function (_React$Component) {
-    _inherits(loginbox, _React$Component);
+var Row = function (_React$Component) {
+    _inherits(Row, _React$Component);
 
-    function loginbox() {
-        _classCallCheck(this, loginbox);
+    function Row() {
+        _classCallCheck(this, Row);
 
-        return _possibleConstructorReturn(this, (loginbox.__proto__ || Object.getPrototypeOf(loginbox)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Row.__proto__ || Object.getPrototypeOf(Row)).apply(this, arguments));
     }
 
-    _createClass(loginbox, [{
+    _createClass(Row, [{
         key: "render",
         value: function render() {
             return _react2.default.createElement(
@@ -18651,26 +18648,21 @@ var loginbox = function (_React$Component) {
                 _react2.default.createElement(
                     "td",
                     null,
-                    "this.props.l.id"
+                    this.props.num
                 ),
                 _react2.default.createElement(
                     "td",
                     null,
-                    "this.props.l.link"
-                ),
-                _react2.default.createElement(
-                    "td",
-                    null,
-                    "this.props.l.per"
+                    this.props.data
                 )
             );
         }
     }]);
 
-    return loginbox;
+    return Row;
 }(_react2.default.Component);
 
-exports.default = loginbox;
+exports.default = Row;
 
 /***/ }),
 /* 31 */

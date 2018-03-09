@@ -13,15 +13,15 @@ export default class NavBar extends React.Component{
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">File Link</th>
-                <th scope="col">Match %</th>
+                {/*<th scope="col">Match %</th>*/}
             </tr>
             </thead>
             <tbody>
 
 
             {
-                this.props.links.map( function(l){
-                    return <Row data={l} key={l.id} />
+                this.props.links.map( function(l,index){
+                    return <Row data={l} key={l} num={index}/>
                 })
             }
 

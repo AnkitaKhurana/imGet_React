@@ -16,20 +16,22 @@ export default class UploadBtn extends React.Component{
 
     }
 
-    componentsDidMount()
+    componentDidMount()
     {
+        console.log('I was triggered during componentDidMount')
+
         var url = "http://localhost:3010/result";
         axios.get(url)
             .then(function (response) {
-                console.log(response);
                 var l = response.data;
                 this.setState({links : l});
-            }.bind(this)).error(
-                function (err) {
-                    console.log(err)
-                });
-    }
+                console.log(this.state.links)
 
+            }.bind(this)).catch(
+            function (err) {
+                console.log(err)
+            });
+    }
     render()
     {
         return(

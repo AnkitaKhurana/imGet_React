@@ -6,6 +6,7 @@ const express = require('express');
 var multer  =   require('multer');
 var bodyParser =    require("body-parser");
 var PythonShell = require('python-shell');
+var shell = require('shelljs');
 var result = [];
 const app = express();
 app.use('/', express.static(__dirname + "/static"));
@@ -29,7 +30,6 @@ app.get('/',function(req,res){
 });
 
 app.get('/result',function (req,res) {
-    console.log('/result called')
     res.send(result)
 });
 
@@ -53,10 +53,11 @@ app.post('/api/Upload',function(req,res){
 
 app.listen(3010,function () {
     "use strict";
-    // PythonShell.run('scrap_website.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
-    //
-    //     console.log('finished');
-    // });
+    PythonShell.run('scrap_website.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
+
+        console.log('finished');
+    });
+    shell.exec('rm '+__dirname+'/known_images/Me/*.*');
 
 });
 
