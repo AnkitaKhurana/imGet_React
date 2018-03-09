@@ -12,7 +12,7 @@ export default class NavBar extends React.Component{
             <thead className="thead-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">File Link</th>
+                <th scope="col">File Name</th>
                 {/*<th scope="col">Match %</th>*/}
             </tr>
             </thead>

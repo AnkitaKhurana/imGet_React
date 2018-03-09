@@ -24,8 +24,10 @@ export default class UploadBtn extends React.Component{
         axios.get(url)
             .then(function (response) {
                 var l = response.data;
+                if (typeof l == 'undefined' || l.length == 0) {
+                    l = ['No Match Found!'];
+                }
                 this.setState({links : l});
-                console.log(this.state.links)
 
             }.bind(this)).catch(
             function (err) {

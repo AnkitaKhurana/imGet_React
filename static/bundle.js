@@ -18444,8 +18444,10 @@ var UploadBtn = function (_React$Component) {
             var url = "http://localhost:3010/result";
             _axios2.default.get(url).then(function (response) {
                 var l = response.data;
+                if (typeof l == 'undefined' || l.length == 0) {
+                    l = ['No Match Found!'];
+                }
                 this.setState({ links: l });
-                console.log(this.state.links);
             }.bind(this)).catch(function (err) {
                 console.log(err);
             });
@@ -18584,7 +18586,7 @@ var NavBar = function (_React$Component) {
                             _react2.default.createElement(
                                 'th',
                                 { scope: 'col' },
-                                'File Link'
+                                'File Name'
                             )
                         )
                     ),
