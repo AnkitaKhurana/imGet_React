@@ -18433,6 +18433,17 @@ var UploadBtn = function (_React$Component) {
     }
 
     _createClass(UploadBtn, [{
+        key: 'componentsDidMount',
+        value: function componentsDidMount() {
+            var url = "http://localhost:3010/result";
+            var config = {};
+            axios.get(url, config).then(function (response) {
+                console.log(response);
+                var l = response.data;
+                this.setState({ links: l });
+            }.bind(this));
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(

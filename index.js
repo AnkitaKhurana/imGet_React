@@ -29,11 +29,12 @@ app.get('/',function(req,res){
 });
 
 app.get('/result',function (req,res) {
+    console.log('/result called')
     res.send(result)
-
-})
+});
 
 app.post('/api/Upload',function(req,res){
+
     upload(req,res,function(err) {
         if(err) {
             console.log(err)
@@ -41,27 +42,22 @@ app.post('/api/Upload',function(req,res){
         }
         PythonShell.run('test.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3',pythonOptions: ['-u']}, function (err,results) {
             if (err) throw err;
-            console.log(results)
-            result = results;
-            console.log('finished');
+            if(results!=null)
+                result = results;
             res.redirect('/');
 
         });
     });
 
-
 });
 
 app.listen(3010,function () {
     "use strict";
-    PythonShell.run('scrap_website.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
+    // PythonShell.run('scrap_website.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
+    //
+    //     console.log('finished');
+    // });
 
-        console.log('finished');
-    });
-    PythonShell.run('delete_files.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
-        if (err) throw err;
-        console.log('finished');
-    });
 });
 
 

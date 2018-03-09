@@ -84,12 +84,13 @@ def draw_preds(img_path, preds):
     source_img.show()
 
 if __name__ == "__main__":
+
     knn_clf = train("known_images")
     for img_path in listdir("unknown_images"):
         preds = predict(join("unknown_images", img_path) ,knn_clf=knn_clf)
         for i in preds:
             if "Me" in i:
-                draw_preds(join("unknown_images", img_path), preds)
+                # draw_preds(join("unknown_images", img_path), preds)
                 found_ulrs.append(img_path)
                 break
 
