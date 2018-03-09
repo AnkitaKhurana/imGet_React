@@ -18440,12 +18440,13 @@ var UploadBtn = function (_React$Component) {
         key: 'componentsDidMount',
         value: function componentsDidMount() {
             var url = "http://localhost:3010/result";
-            var config = {};
-            _axios2.default.get(url, config).then(function (response) {
+            _axios2.default.get(url).then(function (response) {
                 console.log(response);
                 var l = response.data;
                 this.setState({ links: l });
-            }.bind(this));
+            }.bind(this)).error(function (err) {
+                console.log(err);
+            });
         }
     }, {
         key: 'render',
