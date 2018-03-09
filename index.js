@@ -44,6 +44,8 @@ app.post('/api/Upload',function(req,res){
             console.log(results)
             result = results;
             console.log('finished');
+            res.redirect('/');
+
         });
     });
 
@@ -52,10 +54,10 @@ app.post('/api/Upload',function(req,res){
 
 app.listen(3010,function () {
     "use strict";
-    // PythonShell.run('scrap_website.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
-    //
-    //     console.log('finished');
-    // });
+    PythonShell.run('scrap_website.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
+
+        console.log('finished');
+    });
     PythonShell.run('delete_files.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
         if (err) throw err;
         console.log('finished');
