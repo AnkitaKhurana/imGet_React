@@ -84,7 +84,6 @@ def draw_preds(img_path, preds):
     source_img.show()
 
 if __name__ == "__main__":
-    print('inside')
     knn_clf = train("known_images")
     for img_path in listdir("unknown_images"):
         preds = predict(join("unknown_images", img_path) ,knn_clf=knn_clf)
@@ -94,7 +93,5 @@ if __name__ == "__main__":
                 found_ulrs.append(img_path)
                 break
 
-    print('Found Your Images in : ')
     for p in found_ulrs:
         print(p)
-    print('Searching Completed')    
