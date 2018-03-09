@@ -5,7 +5,7 @@
 const express = require('express');
 var multer  =   require('multer');
 var bodyParser =    require("body-parser");
-
+var PythonShell = require('python-shell');
 
 const app = express();
 app.use('/', express.static(__dirname + "/static"));
@@ -39,20 +39,22 @@ app.post('/api/Upload',function(req,res){
             console.log(results)
             console.log('finished');
         });
-        res.send(results)
+        res.end("File is uploaded");
     });
+
+
 });
 
 app.listen(3010,function () {
     "use strict";
-    /*PythonShell.run('scrap_website.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
+    PythonShell.run('scrap_website.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
 
         console.log('finished');
     });
     PythonShell.run('delete_files.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
         if (err) throw err;
         console.log('finished');
-    });*/
+    });
 });
 
 
