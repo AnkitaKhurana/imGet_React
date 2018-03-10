@@ -38,7 +38,7 @@ app.post('/api/Upload',function(req,res){
     upload(req,res,function(err) {
         if(err) {
             console.log(err)
-            return res.end("Error uploading file.");
+            return res.end("Error uploading file."+err);
         }
         PythonShell.run('test.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3',pythonOptions: ['-u']}, function (err,results) {
             if (err) throw err;
