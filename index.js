@@ -51,12 +51,12 @@ app.post('/api/Upload',function(req,res){
 
 });
 
-app.listen(3010,function () {
+app.listen(process.env.PORT||3010,function () {
     "use strict";
-    // PythonShell.run('scrap_website.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
-    //
-    //     console.log('finished');
-    // });
+    PythonShell.run('scrap_website.py',{scriptPath: __dirname+'/Backend/',pythonPath:'/usr/bin/python3'}, function (err) {
+    
+        console.log('finished');
+    });
     shell.exec('rm '+__dirname+'/known_images/Me/*.*');
 
 });
