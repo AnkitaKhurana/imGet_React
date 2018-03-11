@@ -11,17 +11,6 @@ var result = [];
 const app = express();
 app.use('/', express.static(__dirname + "/static"));
 
-var storj = require('storj-lib');
-
-var bridgeURL = "https://api.storj.io"
-var options = {
-  basicAuth: {
-    email: 'cb7c02fa-e720-440e-a21c-d187af0ab938_f979d1082318448b8f69180d5712dfc0@heroku.storj.io',
-    password: 'TRLJUmsAWI4tROsGtgA7tStg0+HNgFYYCJUjam8iaQCMenUyaoi4fpzsEXpu/hLe'
-  }
-}
-
-var client = new storj.BridgeClient(bridgeURL, options);
 
 var storage =   multer.diskStorage({
     destination: function (req, file, callback) {

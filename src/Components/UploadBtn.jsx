@@ -20,7 +20,7 @@ export default class UploadBtn extends React.Component{
     {
         console.log('I was triggered during componentDidMount')
 
-        var url = "http://"+process.env.PORT||3010+"/result";
+        var url = "http://localhost:3010/result";
         axios.get(url)
             .then(function (response) {
                 var l = response.data;
